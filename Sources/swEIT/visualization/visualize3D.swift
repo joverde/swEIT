@@ -12,17 +12,18 @@ import ARKit
 
 
 //map a single frame
+@available(iOS 11.0, *)
 func mapSingle3D(ds:[Double],pts:[[Double]],tri:[[Int]]) -> SCNView{
     let (nodes) = makeMesh3D(ds: ds, pts: pts, tri: tri)
     return nodes
 }
-
+@available(iOS 11.0, *)
 //map a single frame, from 2 bands
 func mapMulti3D(ds1:[Double], ds2: [Double],pts:[[Double]],tri:[[Int]], position:SCNVector3) -> SCNView{
     let (node) = makeMesh3DMulti(ds1: ds1, ds2: ds2, pts: pts, tri: tri, position:position)
     return node
 }
-
+@available(iOS 11.0, *)
 func mapMany3D(ds_all:[[Double]],pts:[[Double]],tri:[[Int]]) -> [ARSCNView]{
     //mapMany only does mesh, no colorbar yet
     var nodes = [ARSCNView]()
@@ -33,7 +34,7 @@ func mapMany3D(ds_all:[[Double]],pts:[[Double]],tri:[[Int]]) -> [ARSCNView]{
     return nodes
 }
 
-
+@available(iOS 11.0, *)
 func makeMesh3D(ds:[Double],pts:[[Double]],tri:[[Int]]) -> ARSCNView{
     //v1,v2,v3 represent vertex points
     //color is mean of color at each point of vertex
@@ -211,7 +212,7 @@ func makeMesh3D(ds:[Double],pts:[[Double]],tri:[[Int]]) -> ARSCNView{
 //    }
 //    return mesh
 //}
-
+@available(iOS 11.0, *)
 func mapMany3DMulti(ds_all:[[Double]],pts:[[Double]],tri:[[Int]], position:SCNVector3) -> [SCNView]{
     //mapMany only does mesh, no colorbar yet
     var nodes = [SCNView]()
@@ -232,7 +233,7 @@ func mapMany3DMulti(ds_all:[[Double]],pts:[[Double]],tri:[[Int]], position:SCNVe
     }
     return nodes
 }
-
+@available(iOS 11.0, *)
 func makeMesh3DMulti(ds1:[Double], ds2:[Double],pts:[[Double]],tri:[[Int]],position:SCNVector3) -> ARSCNView{
     //v1,v2,v3 represent vertex points
     //color is mean of color at each point of vertex
