@@ -21,7 +21,7 @@ public class Forward{
     var n_vertices : Int
     var ne : Int
     
-    init(mesh : NSMutableDictionary, el_pos: [Int]){
+    public init(mesh : NSMutableDictionary, el_pos: [Int]){
         /*
          A good FEM forward solver should only depend on
          mesh structure and the position of electrodes

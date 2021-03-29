@@ -35,7 +35,7 @@ public class EitBase: NSObject{
     var v0, v0_sign : [Double]
     var J : [[Double]]
 
-    init(mesh: NSMutableDictionary, el_pos: [Int], ex_mat: [[Int]] = [], step: Int = 1, perm: [Double] = [], jac_normalized:Bool = false, parser: String = "std"){
+    public init(mesh: NSMutableDictionary, el_pos: [Int], ex_mat: [[Int]] = [], step: Int = 1, perm: [Double] = [], jac_normalized:Bool = false, parser: String = "std"){
         /*
         Parameters
         ----------

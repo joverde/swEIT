@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 public class GeneratedData{
+    public init() {}
     
     public func showGeneratedData() -> ([Double], [[Double]], [[Int]]){
         // Do any additional setup after loading the view.

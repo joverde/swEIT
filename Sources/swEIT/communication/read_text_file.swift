@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public class ReadTextFile{
-
+    public init() {}
     public func readText() -> ([[Double]],[[Int]],[[Double]]){
 
         // Read the contents of the specified file

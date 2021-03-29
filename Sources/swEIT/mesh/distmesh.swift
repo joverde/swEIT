@@ -33,7 +33,7 @@ public class DISTMESH{
     var edge_combinations : [[Int]]
     var t : [[Int]]
     
-    init( fd : @escaping ([[Double]],[Double]?,Double?) -> [Double], fh : @escaping ([[Double]]) -> [Double], h0:Double=0.1, p_fix:[[Double]]=[], bbox:[[Double]]=[], density_ctrl_freq:Int=30, deltat:Double=0.1, dptol:Double=0.001, ttol:Double=0.1, Fscale:Double=1.2, verbose:Bool=false){
+    public init( fd : @escaping ([[Double]],[Double]?,Double?) -> [Double], fh : @escaping ([[Double]]) -> [Double], h0:Double=0.1, p_fix:[[Double]]=[], bbox:[[Double]]=[], density_ctrl_freq:Int=30, deltat:Double=0.1, dptol:Double=0.001, ttol:Double=0.1, Fscale:Double=1.2, verbose:Bool=false){
         /*initial distmesh class
 
         Parameters
