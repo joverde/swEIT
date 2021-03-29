@@ -59,7 +59,7 @@ func eit_scan_lines(ne: Int=16, dist:Int=1) -> [[Int]]{
 }
 
 
-func mesh_setup(_ n: Int) -> (BP,[[Double]],[[Int]]){
+public func mesh_setup(_ n: Int) -> (BP,[[Double]],[[Int]]){
         let (mesh_obj, el_pos) = create(n_el: n, h0:0.1)
         let pts = mesh_obj["node"] as! [[Double]]
         let tri = mesh_obj["element"] as! [[Int]]
