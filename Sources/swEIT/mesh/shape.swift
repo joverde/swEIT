@@ -9,7 +9,7 @@ import Foundation
 import Surge
 
 
-func circle(pts : [[Double]], pc : [Double]?=[], r:Double?=1.0) -> [Double]{
+public func circle(pts : [[Double]], pc : [Double]?=[], r:Double?=1.0) -> [Double]{
     /*
     Distance function for the circle centered at pc = [xc, yc]
 
@@ -282,7 +282,7 @@ func dist_union(d1: [Double], d2:[Double])-> [Double]{
     return final
 }
 
-func area_uniform(p: [[Double]])->[Double]{
+public func area_uniform(p: [[Double]])->[Double]{
     /*uniform mesh distribution
 
     Parameters
