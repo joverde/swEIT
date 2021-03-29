@@ -7,7 +7,7 @@
 
 import Foundation
 
-func parseFrame(_ input: String) -> [Double]{
+public func parseFrame(_ input: String) -> [Double]{
     let input_st = String(input.enumerated().map { $0 > 0 && $0 % 6 == 0 ? [" ", $1] : [$1]}.joined())
     let input_split = input_st.components(separatedBy: " ")
     var frame = [Double]()

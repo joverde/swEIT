@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class ReadTextFile{
+public class ReadTextFile{
 
-    func readText() -> ([[Double]],[[Int]],[[Double]]){
+    public func readText() -> ([[Double]],[[Int]],[[Double]]){
 
         // Read the contents of the specified file
         // Josh TODO: make filename a variable

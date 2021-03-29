@@ -7,7 +7,7 @@
 
 import Foundation
 
-func create(n_el:Int=16, fd:  @escaping ([[Double]],[Double]?,Double?) -> [Double] = circle, fh:@escaping ([[Double]]) -> [Double]=area_uniform, h0:Double=0.1, p_fix:[[Double]]=[], bbox:[[Double]]=[]) -> (NSDictionary,[Int]){
+public func create(n_el:Int=16, fd:  @escaping ([[Double]],[Double]?,Double?) -> [Double] = circle, fh:@escaping ([[Double]]) -> [Double]=area_uniform, h0:Double=0.1, p_fix:[[Double]]=[], bbox:[[Double]]=[]) -> (NSDictionary,[Int]){
     /*
     Generating 2D/3D meshes using distmesh (pyEIT built-in)
 
@@ -63,7 +63,7 @@ func create(n_el:Int=16, fd:  @escaping ([[Double]],[Double]?,Double?) -> [Doubl
     return (mesh, el_pos)
 }
 
-    func set_perm(mesh: NSDictionary, anomaly: [[String:Double]]=[], background:Double = -1.0) -> NSMutableDictionary{
+public func set_perm(mesh: NSDictionary, anomaly: [[String:Double]]=[], background:Double = -1.0) -> NSMutableDictionary{
     /*
      wrapper for pyEIT interface
 

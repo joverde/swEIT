@@ -8,7 +8,7 @@ import Foundation
 import Surge
 import Accelerate
 
-class Forward{
+public class Forward{
     //FEM forward computing code
     var el_pos : [Int]
     var pts : [[Double]]
@@ -61,7 +61,7 @@ class Forward{
         self.n_vertices = self.tri[0].count
         self.ne = el_pos.count
     }
-    func solve_eit(ex_mat: [[Int]] = [], step: Int = 1, perm: [Double] = [], parser: String = "std") -> NSMutableDictionary{
+    public func solve_eit(ex_mat: [[Int]] = [], step: Int = 1, perm: [Double] = [], parser: String = "std") -> NSMutableDictionary{
         /*
          EIT simulation, generate perturbation matrix and forward v
          
@@ -148,7 +148,7 @@ class Forward{
         pde_result["b_matrix"] = b_matrix
         return pde_result
     }
-    func invert(matrix : [Double]) -> [Double] {
+    public func invert(matrix : [Double]) -> [Double] {
         var inMatrix = matrix
         var N = __CLPK_integer(sqrt(Double(matrix.count)))
         var pivots = [__CLPK_integer](repeating: 0, count: Int(N))
@@ -162,7 +162,7 @@ class Forward{
         return inMatrix
     }
     
-    func solve(ex_line : [Int], perm : [Double]) -> NSMutableDictionary{
+    public func solve(ex_line : [Int], perm : [Double]) -> NSMutableDictionary{
         /*
          with one pos (A), neg(B) driven pairs, calculate and
          compute the potential distribution (complex-valued)
@@ -237,7 +237,7 @@ class Forward{
         return d
     }
     
-    func _natural_boundary(ex_line : [Int]) -> [Double]{
+    public func _natural_boundary(ex_line : [Int]) -> [Double]{
         /*
          Notes
          -----
@@ -256,7 +256,7 @@ class Forward{
         return b
     }
     
-    func smear(f: [Double], fb: [Double], pairs: [[Int]]) -> [[Double]]{
+    public func smear(f: [Double], fb: [Double], pairs: [[Int]]) -> [[Double]]{
         /*
          build smear matrix B for bp
          
@@ -286,7 +286,7 @@ class Forward{
         return b_matrix
     }
     
-    func subtract_row(v:[Double], pairs: [[Int]]) -> [Double]{
+    public func subtract_row(v:[Double], pairs: [[Int]]) -> [Double]{
         /*
          v_diff[k] = v[i, :] - v[j, :]
          
@@ -319,7 +319,7 @@ class Forward{
         return v_diff
     }
     
-    func subtract_row2D(v:[[Double]], pairs: [[Int]]) -> [[Double]]{
+    public func subtract_row2D(v:[[Double]], pairs: [[Int]]) -> [[Double]]{
         /*
          v_diff[k] = v[i, :] - v[j, :]
          
@@ -358,7 +358,7 @@ class Forward{
         return v_diff
     }
     
-    func voltage_meter(ex_line : [Int], n_el: Int=16, step: Int=1, parser:String="std") -> [[Int]]{
+    public func voltage_meter(ex_line : [Int], n_el: Int=16, step: Int=1, parser:String="std") -> [[Int]]{
         /*
          extract subtract_row-voltage measurements on boundary electrodes.
          we direct operate on measurements or Jacobian on electrodes,
@@ -420,7 +420,7 @@ class Forward{
         return diff_pairs
     }
     
-    func assemble_sparse(ke: [[[Double]]], tri : [[Int]], perm: [Double], n_pts:Int, ref:Int=0) -> [[Double]]{
+    public func assemble_sparse(ke: [[[Double]]], tri : [[Int]], perm: [Double], n_pts:Int, ref:Int=0) -> [[Double]]{
         /*
          Assemble the stiffness matrix (using sparse matrix)
          
@@ -499,7 +499,7 @@ class Forward{
         return A
     }
     
-    func calculate_ke(pts: [[Double]], tri: [[Int]]) -> [[[Double]]]{
+    public func calculate_ke(pts: [[Double]], tri: [[Int]]) -> [[[Double]]]{
         /*
          Calculate local stiffness matrix on all elements.
          
@@ -551,7 +551,7 @@ class Forward{
         return ke_array
     }
     
-    func _k_triangle(xy: [[Double]]) -> [[Double]]{
+    public func _k_triangle(xy: [[Double]]) -> [[Double]]{
         /*
          given a point-matrix of an element, solving for Kij analytically
          using barycentric coordinates (simplex coordinates)
@@ -591,7 +591,7 @@ class Forward{
         return ke_matrix
     }
     
-    func det2x2(s1: [Double], s2: [Double]) -> Double{
+    public func det2x2(s1: [Double], s2: [Double]) -> Double{
         // Calculate the determinant of a 2x2 matrix
         return Double(s1[0] * s2[1] - s1[1] * s2[0])
     }

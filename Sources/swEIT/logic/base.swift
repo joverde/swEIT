@@ -123,7 +123,7 @@ public class EitBase: NSObject{
         // self.setup()  // user must setup manually
     }
 
-    func solve(v1: [Double], v0: [Double], normalize: Bool = false, log_scale: Bool = false) -> [Double]{
+    public func solve(v1: [Double], v0: [Double], normalize: Bool = false, log_scale: Bool = false) -> [Double]{
         /*
         dynamic imaging (conductivities imaging)
 
@@ -163,7 +163,7 @@ public class EitBase: NSObject{
         return final
     }
 
-    func normalize(v1: [Double], v0: [Double]) -> [Double]{
+    public func normalize(v1: [Double], v0: [Double]) -> [Double]{
         /*
         Normalize current frame using the amplitude of the reference frame.
         Boundary measurements v are complex-valued, we can use the real part of v,

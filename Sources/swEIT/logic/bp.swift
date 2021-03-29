@@ -11,7 +11,7 @@ import Surge
 public class BP: EitBase{
     // A naive inversion of (Euclidean) back projection.
     
-    func setup(weight: String="none"){
+    public func setup(weight: String="none"){
         // setup BP
         self.params = ["weight": weight]
 

@@ -8,7 +8,7 @@
 import Foundation
 import Surge
 
-class DISTMESH{
+public class DISTMESH{
     var fd : ([[Double]],[Double]?,Double?) -> [Double]
     var fh : ([[Double]]) -> [Double]
     var h0 : Double
@@ -133,7 +133,7 @@ class DISTMESH{
         self.triangulate()
 
     }
-    func is_retriangulate() -> Bool{
+    public func is_retriangulate() -> Bool{
         // test whether re-triangulate is needed
         var dists : [[Double]] = []
         for (pt1,pt2) in zip(self.p,self.pold){
@@ -143,7 +143,7 @@ class DISTMESH{
         return max(dist(p: dists)) > (self.h0 * self.ttol)
     }
     
-    func triangulate(){
+    public func triangulate(){
         // retriangle by delaunay
         self.num_triangulate += 1
         // pnew[:] = pold[:] makes a new copy, not reference
@@ -236,7 +236,7 @@ class DISTMESH{
         }
         return (L, L0, barvec, flag)
     }
-    func bar_force(L: [[Double]], L0: [[Double]], barvec: [[Double]]) -> [[Double]]{
+    public func bar_force(L: [[Double]], L0: [[Double]], barvec: [[Double]]) -> [[Double]]{
         //optimization: running rows_flat in same for loop as data, getting rid of fvec stuff
         // forces on bars
         var F : [[Double]] = []
@@ -272,7 +272,7 @@ class DISTMESH{
         }
         return Ftot
     }
-    func density_control(L: [[Double]], L0: [[Double]], dscale:Double=3.0){
+    public func density_control(L: [[Double]], L0: [[Double]], dscale:Double=3.0){
         /*
         Density control - remove points that are too close
         L0 : Kx1, L : Kx1, bars : Kx2
@@ -433,7 +433,7 @@ class DISTMESH{
     return pnew
 
     }
-    func build(fd : @escaping ([[Double]],[Double]?,Double?) -> [Double], fh : @escaping ([[Double]]) -> [Double], pfix:[[Double]]=[], bbox:[[Double]]=[], h0:Double=0.1, densityctrlfreq:Int=10, maxiter:Int=500, verbose:Bool=false) -> ([[Double]], [[Int]]){
+public func build(fd : @escaping ([[Double]],[Double]?,Double?) -> [Double], fh : @escaping ([[Double]]) -> [Double], pfix:[[Double]]=[], bbox:[[Double]]=[], h0:Double=0.1, densityctrlfreq:Int=10, maxiter:Int=500, verbose:Bool=false) -> ([[Double]], [[Int]]){
     /*main function for distmesh
 
     See Also

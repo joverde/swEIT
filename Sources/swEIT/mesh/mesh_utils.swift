@@ -8,7 +8,7 @@
 import Foundation
 import Surge
 
-func dist(p:[[Double]]) -> [Double]{
+public func dist(p:[[Double]]) -> [Double]{
     /* distances to origin of nodes. '3D', 'ND' compatible
      
      Parameters

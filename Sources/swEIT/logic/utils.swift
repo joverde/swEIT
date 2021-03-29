@@ -8,7 +8,7 @@
 import Foundation
 
 
-func eit_scan_lines(ne: Int=16, dist:Int=1) -> [[Int]]{
+public func eit_scan_lines(ne: Int=16, dist:Int=1) -> [[Int]]{
     /*
     generate scan matrix
 

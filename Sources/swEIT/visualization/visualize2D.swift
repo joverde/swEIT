@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 
 
-func mapSingle(ds:[Double],pts:[[Double]],tri:[[Int]], w: Double) -> (UIView,UIView){
+public func mapSingle(ds:[Double],pts:[[Double]],tri:[[Int]], w: Double) -> (UIView,UIView){
     let padding : Double = 10
     let (mesh, minc, maxc) = makeMesh(ds: ds, pts: pts, tri: tri, w: w, padding: padding)
     let (colorbar, lowBound, highBound, conductivityLabel) = generateColorbar(ds: ds, pts: pts, tri: tri, w: w, padding: padding,minc:minc,maxc: maxc)
@@ -26,7 +26,7 @@ func mapSingle(ds:[Double],pts:[[Double]],tri:[[Int]], w: Double) -> (UIView,UIV
 }
 
 
-func mapMany(ds_all:[[Double]],pts:[[Double]],tri:[[Int]],w:Double) -> [UIView]{
+public func mapMany(ds_all:[[Double]],pts:[[Double]],tri:[[Int]],w:Double) -> [UIView]{
     //mapMany only does mesh, no colorbar yet
     var meshes = [UIView]()
     var mins = [Double]()
@@ -44,7 +44,7 @@ func mapMany(ds_all:[[Double]],pts:[[Double]],tri:[[Int]],w:Double) -> [UIView]{
 
 
 
-func makeMesh(ds:[Double],pts:[[Double]],tri:[[Int]], w: Double, padding: Double) -> (UIView,Double,Double){
+public func makeMesh(ds:[Double],pts:[[Double]],tri:[[Int]], w: Double, padding: Double) -> (UIView,Double,Double){
     //v1,v2,v3 represent vertex points
     //color is mean of color at each point of vertex
     //minc and maxc are bounds of colors

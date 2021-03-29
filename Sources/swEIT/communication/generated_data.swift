@@ -10,7 +10,7 @@ import UIKit
 
 public class GeneratedData{
     
-    func showGeneratedData() -> ([Double], [[Double]], [[Int]]){
+    public func showGeneratedData() -> ([Double], [[Double]], [[Int]]){
         // Do any additional setup after loading the view.
         // 0. build mesh
         let (mesh_obj, el_pos) = create(n_el: 16, h0:0.1)
@@ -47,7 +47,7 @@ public class GeneratedData{
         return (ds,pts,tri)
     }
     
-    func generatedMesh(n_el:Int) -> (BP, [[Double]], [[Int]]){
+    public func generatedMesh(n_el:Int) -> (BP, [[Double]], [[Int]]){
         // Do any additional setup after loading the view.
         // 0. build mesh
         let (mesh_obj, el_pos) = create(n_el: n_el, h0:0.1)
